@@ -1,10 +1,22 @@
-export const BOX_SHADOW = {
-  shadowColor: '#000',
-  shadowOddset: {
-    width: 0,
-    height: 2,
-  },
-  shadowOpacity: 0.15,
-  shadowRadius: 10,
-  elevation: 5,
-}
+import styled from 'styled-components/native';
+
+export const StyledInput = styled.TextInput`
+  background-color: #ededed;
+  border-radius: 10%;
+  padding: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+`;
+
+export const StyledButton = styled.TouchableHighlight<{
+  baseColor: string;
+}>`
+  border-radius: 10%;
+  padding: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  background-color: ${({ baseColor }) => baseColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
