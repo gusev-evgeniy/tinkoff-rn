@@ -8,12 +8,12 @@ import {
 import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDanajJoNvjXqyaacprleQ_4tcKzm3VsNM',
-  authDomain: 'tinkoff-a09cd.firebaseapp.com',
-  projectId: 'tinkoff-a09cd',
-  storageBucket: 'tinkoff-a09cd.appspot.com',
-  messagingSenderId: '249842556014',
-  appId: '1:249842556014:web:55edd12a8d6d6bf3705a7f',
+  apiKey: 'AIzaSyDTlPvkCqRIJOeLXyuzwi7BjZKzF2zzwYw',
+  authDomain: 'tinkoff-bfdea.firebaseapp.com',
+  projectId: 'tinkoff-bfdea',
+  storageBucket: 'tinkoff-bfdea.appspot.com',
+  messagingSenderId: '495916309485',
+  appId: '1:495916309485:web:85d1315f6e8f4d9efea5e4',
 };
 
 initializeApp(firebaseConfig);

@@ -1,4 +1,4 @@
-import { Navigation } from './app/components/navigations';
+import { Navigation } from './app/screens/navigation';
 import { AuthProvider } from './app/providers/AuthProvider';
 
 export default function App() {

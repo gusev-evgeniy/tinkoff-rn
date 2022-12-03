@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Pressable, Text } from 'react-native';
-import { useAuth } from '../../../hooks/useAuth';
-import { StyledInput } from '../../../styles';
-import { StyledLayout } from '../../layout/styles';
-import { Loader } from '../../ui/loader';
-import { MyButton } from '../../ui/myButton';
+import { Text } from 'react-native';
+import { useAuth } from '../../hooks/useAuth';
+import { StyledInput } from '../../styles';
+import { StyledLayout } from '../../components/layout/styles';
+import { Loader } from '../../components/ui/loader';
+import { MyButton } from '../../components/ui/myButton';
 import { StyledAuth, StyledAuthName, StyledUtilityButton } from './styles';
 
 const isEmail =
