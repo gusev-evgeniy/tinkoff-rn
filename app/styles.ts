@@ -21,17 +21,3 @@ export const StyledButton = styled.TouchableHighlight<{
   align-items: center;
   margin-bottom: 10%;
 `;
-
-export const StyledAvatar = styled.View`
-  border-radius: 100%;
-  background-color: #ededed;
-  height: 48px;
-  width: 48px;
-  display: flex;
-  align-items: center;
-`;
-
-export const AvatarText = styled.Text`
-  font-size: 24rem;
-  color: red;
-`;

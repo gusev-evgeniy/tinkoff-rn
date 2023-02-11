@@ -27,6 +27,8 @@ const Auth = () => {
     setPassword('');
   };
 
+  console.log(' isLoading', isLoading);
+
   return (
     <StyledLayout>
       <StyledAuth>

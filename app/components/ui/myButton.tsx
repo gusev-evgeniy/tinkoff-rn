@@ -18,7 +18,7 @@ export const MyButton: FC<Props> = ({ title, colors, onPress }) => {
       underlayColor={colors.base}
       onPress={onPress}
     >
-      <Text>{title}</Text>
+      <Text style={{}}>{title}</Text>
     </StyledButton>
   );
 };

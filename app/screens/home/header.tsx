@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Avatar } from '../../components/ui/avatar';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -8,6 +8,7 @@ import { StyledHeader } from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
+import { StyledText, StyledView } from '../../styledComponents';
 
 type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
 
@@ -19,13 +20,19 @@ export const Header: FC = () => {
     return null;
   }
 
-  const { displayName } = user;
+  const { name } = user;
 
   return (
     <TouchableOpacity onPress={() => navigate('Profile')}>
       <StyledHeader>
-        <Avatar name={displayName} />
-        <Text>{displayName}</Text>
+        <StyledView className='h-12 w-12 bg-gray-400 rounded-full flex flex-col justify-center items-center'>
+          <StyledText className='text-lg font-bold text-gray-100'>
+            {name.slice(0, 1)}
+          </StyledText>
+        </StyledView>
+        <StyledView className='ml-4'>
+          <StyledText className='font-bold'>{name}</StyledText>
+        </StyledView>
         <Entypo
           name='chevron-small-right'
           size={28}
