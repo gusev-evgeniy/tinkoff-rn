@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Text } from 'react-native';
-import { StyledButton } from '../../styles';
+import { StyledTouchableHighlight } from '../../styledComponents';
 
 type Props = {
   title: string;
@@ -13,12 +13,12 @@ type Props = {
 
 export const MyButton: FC<Props> = ({ title, colors, onPress }) => {
   return (
-    <StyledButton
-      baseColor={colors.base}
+    <StyledTouchableHighlight
+      style={{ backgroundColor: colors.base, padding: 12 }}
+      className='w-full flex items-center mb-4 rounded-lg'
       underlayColor={colors.base}
-      onPress={onPress}
-    >
-      <Text style={{}}>{title}</Text>
-    </StyledButton>
+      onPress={onPress}>
+      <Text>{title}</Text>
+    </StyledTouchableHighlight>
   );
 };

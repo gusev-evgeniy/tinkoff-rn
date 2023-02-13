@@ -1,4 +1,4 @@
-import { createContext, FC, useEffect, useMemo, useState } from 'react';
+import { createContext, FC, useContext, useEffect, useMemo, useState } from 'react';
 import { Alert } from 'react-native';
 
 import { AuthAPI } from '../api/auth';
@@ -108,3 +108,5 @@ export const AuthProvider: FC<{ children: React.ReactElement }> = ({
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
+
+export const useAuth = () => useContext(AuthContext);

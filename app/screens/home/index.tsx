@@ -1,4 +1,4 @@
-import { Pressable, Text } from 'react-native';
+import { Pressable } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 import { StyledLayout } from '../../components/layout/styles';
@@ -12,6 +12,7 @@ import {
 } from '../../styledComponents';
 import { useSlider } from './stories/useSlider';
 import { Pagination } from './stories/pagination';
+import { Accounts } from './accounts';
 
 const STORIES_COUNT = 5;
 
@@ -60,7 +61,7 @@ const Home = () => {
       <Header />
 
       {!isLoading && <Stories stories={stories} select={setSelectedIndex} />}
-      <Text>Home</Text>
+      <Accounts/>
     </StyledLayout>
   );
 };

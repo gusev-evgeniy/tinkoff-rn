@@ -2,12 +2,12 @@ import React, { FC } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from './types';
-import { useAuth } from '../hooks/useAuth';
 import Auth from './auth';
 import Home from './home';
 import Payments from './payment';
 import Profile from './profile';
 import Services from './services';
+import { useAuth } from '../providers/AuthProvider';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

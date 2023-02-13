@@ -12,7 +12,7 @@ router.get('/auth/me', isAuth, UserController.me);
 router.delete('/auth/logout', isAuth, UserController.logout);
 router.put('/user/update', isAuth, UserController.update);
 
-router.post('/account/create', isAuth, AccountController.create);
-router.get('/user/get', isAuth, AccountController.get);
+router.post('/account', isAuth, AccountController.create);
+router.get('/account', isAuth, AccountController.get);
 
 export default router;

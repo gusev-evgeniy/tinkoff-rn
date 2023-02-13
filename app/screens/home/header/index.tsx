@@ -1,14 +1,13 @@
 import { FC } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { Avatar } from '../../components/ui/avatar';
-import { useAuth } from '../../hooks/useAuth';
 
 import { Entypo } from '@expo/vector-icons';
-import { StyledHeader } from './styles';
+import { StyledHeader } from '../styles';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types';
-import { StyledText, StyledView } from '../../styledComponents';
+import { RootStackParamList } from '../../types';
+import { StyledText, StyledView } from '../../../styledComponents';
+import { useAuth } from '../../../providers/AuthProvider';
 
 type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
 

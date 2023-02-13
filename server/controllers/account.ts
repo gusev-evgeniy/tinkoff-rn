@@ -4,32 +4,37 @@ import AccountEntity from '../entities/account';
 class Account {
   async create(req: Request, res: Response) {
     try {
-      const { type, currency } = req.body;
+      const user = res.locals.user;
 
-      const account = await AccountEntity.create({
+      const { type, currency } = req.body;
+      await AccountEntity.create({
         type,
         currency,
-        user: res.locals.user.id,
+        user,
       }).save();
-      console.log('account', account);
 
-      return res.json({ message: 'Success' });
+      const accounts = await AccountEntity.find({
+        where: { userId: user.id },
+      });
+
+      return res.json(accounts);
     } catch (error) {
       console.log('Create accounts error:', error.message);
-      return res.json({ message: error.message });
+      return res.status(500).json({ message: error.message });
     }
   }
 
   async get(_: Request, res: Response) {
     try {
       const accounts = await AccountEntity.find({
-        where: { user: res.locals.user.id },
+        where: { userId: res.locals.user.id },
+        order: { createdAt: 'DESC' },
       });
 
       return res.json(accounts);
     } catch (error) {
       console.log('Get accounts error:', error.message);
-      return res.json({ message: error.message });
+      return res.status(500).json({ message: error.message });
     }
   }
 }

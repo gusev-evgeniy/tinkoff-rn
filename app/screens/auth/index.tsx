@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Text } from 'react-native';
-import { useAuth } from '../../hooks/useAuth';
 import { StyledInput } from '../../styles';
 import { StyledLayout } from '../../components/layout/styles';
 import { Loader } from '../../components/ui/loader';
 import { MyButton } from '../../components/ui/myButton';
 import { StyledAuth, StyledAuthName, StyledUtilityButton } from './styles';
+import { useAuth } from '../../providers/AuthProvider';
 
 const isEmail =
   /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

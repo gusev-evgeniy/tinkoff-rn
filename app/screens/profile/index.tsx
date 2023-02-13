@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Layout } from '../../components/layout';
 import { Loader } from '../../components/ui/loader';
 import { MyButton } from '../../components/ui/myButton';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../providers/AuthProvider';
 import { StyledText, StyledView } from '../../styledComponents';
 import { StyledInput } from '../../styles';
 import { StyledAuth, StyledAuthName } from '../auth/styles';

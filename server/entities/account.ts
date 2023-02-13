@@ -1,21 +1,30 @@
-import { Column, Entity, ManyToOne } from 'typeorm';
+import { BeforeInsert, Column, Entity, ManyToOne } from 'typeorm';
 import Base from '.';
+import { generateCardNumber } from '../utils/accounts';
 import User from './user';
 
 @Entity()
 export default class Account extends Base {
-  @Column({ enum: ['black', 'dd'], default: 'black' })
+  @Column({ enum: ['Black', 'All Airline'], default: 'Black' })
   type: string;
 
-  @Column({ enum: ['ruble', 'dollar'], default: 'dollar' })
+  @Column({ enum: ['RUB', 'USD'], default: 'USD' })
   currency: string;
 
   @Column({ default: 0 })
   cash: number;
 
   @Column({ unique: true })
-  number: number;
+  cardNumber: string;
 
   @ManyToOne(() => User, user => user.accounts)
   user: User;
+
+  @Column({ type: 'uuid' })
+  userId: string;
+
+  @BeforeInsert()
+  async hashPassword() {
+    this.cardNumber = generateCardNumber();
+  }
 }
